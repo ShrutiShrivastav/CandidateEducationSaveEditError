@@ -13,13 +13,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 public class CandidateEducation extends AppCompatActivity {
-Button visibility_btn, cancel_btn, btn_save;
+Button visibility_btn, cancel_btn, btn_save, btn_recycler;
     ImageView back_btn_edu;
 RelativeLayout relativeLayout;
 
 
 // declaring variables
-    EditText getName,getTitle,getDateFrom,getDateTo;
+    EditText new_Title,new_Name,new_dateFrom,new_dateTo;
 
 
     @Override
@@ -28,18 +28,19 @@ RelativeLayout relativeLayout;
 
         setContentView(R.layout.activity_candidate_education);
 
-        ImageView back_btn_edu = findViewById(R.id.back_arrow_edu);
+       back_btn_edu = findViewById(R.id.back_arrow_edu);
 
         cancel_btn = findViewById(R.id.cancel);
         relativeLayout = findViewById(R.id.Visibility_layout);
         visibility_btn = findViewById(R.id.visibility_layout_button);
         btn_save = findViewById(R.id.button_save);
+        btn_recycler = findViewById(R.id.recycler_button);
 
         //getting variables
-        getTitle =findViewById(R.id.et_getTitle);
-        getName = findViewById(R.id.et_getName);
-        getDateFrom = findViewById(R.id.et_getDateFrom);
-        getDateTo = findViewById(R.id.et_getDateTo);
+        new_Title =findViewById(R.id.et_Title);
+        new_Name = findViewById(R.id.et_Name);
+        new_dateFrom = findViewById(R.id.et_DateFrom);
+        new_dateTo = findViewById(R.id.et_DateTo);
 
 
         //setting visibility
@@ -62,12 +63,30 @@ RelativeLayout relativeLayout;
        btn_save.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
-               MyDatabaseHelper myDB = new MyDatabaseHelper(CandidateEducation.this);
-                myDB.addData( getTitle.getText().toString().trim(),
-               getName.getText().toString().trim(),
-               getDateFrom.getText().toString().trim(),
-               getDateTo.getText().toString().trim());
+               processInsert(new_Title.getText().toString().trim(), new_Name.getText().toString().trim(), new_dateFrom.getText().toString().trim(), new_dateTo.getText().toString().trim());
            }
        });
+
+       //redirecting to recycler view
+       btn_recycler.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               startActivity(new Intent(getApplicationContext(),RecyclerView.class));
+           }
+       });
+
     }
+ //method for inserting data into database
+    private void processInsert(String title, String name, String dateFrom, String dateTo) {
+
+        MyDatabaseHelper myDB = new MyDatabaseHelper(CandidateEducation.this);
+        myDB.addData(title,name,dateFrom,dateTo);
+        new_Title.setText("");
+        new_Name.setText("");
+        new_dateFrom.setText("");
+        new_dateTo.setText("");
+
+    }
+
+
 }

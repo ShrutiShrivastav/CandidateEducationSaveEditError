@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UpdateActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:id="@+id/back_arrow_update"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/ic_arrow_back"
+            app:tint="@color/black" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginEnd="28dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/nunito"
+            android:text="Update Work History"
+            android:textSize="24sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginStart="29dp"
+        android:text="Position Title *"
+        android:textColor="@color/black"
+        android:fontFamily="@font/nunito"
+        android:textStyle="bold"
+        android:textSize="18dp"/>
+
+        <ImageView
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:id="@+id/delete"
+            android:layout_marginTop="35dp"
+            android:layout_marginStart="180dp"
+            android:src="@drawable/ic_delete"
+            app:tint="@color/red" />
+
+        </LinearLayout>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:ems="10"
+        android:id="@+id/new_Title"
+        android:inputType="textPersonName"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginEnd="29dp"
+        android:textStyle="bold"
+        android:gravity="center_vertical"
+        android:background="@drawable/background"
+        android:paddingLeft="29dp"
+        android:textSize="17dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+        android:layout_marginStart="29dp"
+        android:text="Company Name *"
+        android:textColor="@color/black"
+        android:fontFamily="@font/nunito"
+        android:textStyle="bold"
+        android:textSize="18dp"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="62dp"
+        android:ems="10"
+        android:id="@+id/new_Name"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginEnd="29dp"
+        android:textStyle="bold"
+        android:gravity="center_vertical"
+        android:background="@drawable/background"
+        android:paddingLeft="29dp"
+        android:textSize="17dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textView67"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="29dp"
+            android:layout_marginTop="21dp"
+            android:text="Date from *"
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito"/>
+
+        <EditText
+            android:id="@+id/new_DateFrom"
+            android:layout_width="149dp"
+            android:layout_height="48dp"
+            android:layout_below="@+id/textView67"
+            android:layout_marginStart="29dp"
+            android:layout_marginTop="10dp"
+            android:paddingEnd="10dp"
+            android:paddingStart="20dp"
+            android:ems="10"
+            android:drawableEnd="@drawable/ic_baseline_arrow_drop_down_24"
+            android:background="@drawable/background"
+            />
+
+        <TextView
+            android:id="@+id/textView66"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="21dp"
+            android:layout_marginStart="57dp"
+            android:layout_marginEnd="107dp"
+            android:fontFamily="@font/nunito"
+            android:text="Date To *"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="18dp" />
+
+        <EditText
+            android:id="@+id/new_DateTo"
+            android:layout_width="149dp"
+            android:layout_height="48dp"
+            android:layout_below="@+id/textView66"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="28dp"
+            android:layout_toEndOf="@+id/new_DateFrom"
+            android:ems="10"
+            android:paddingEnd="10dp"
+            android:paddingStart="20dp"
+            android:drawableEnd="@drawable/ic_baseline_arrow_drop_down_24"
+            android:background="@drawable/background"
+            android:fontFamily="@font/nunito"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/update"
+            android:layout_width="170dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="150dp"
+            android:layout_marginStart="120dp"
+            android:text="Update"
+            android:textStyle="bold"
+            android:textSize="19sp"
+            android:fontFamily="@font/nunito"
+            android:textColor="@color/white"
+            android:background="@drawable/background_solid"
+            android:textAllCaps="false"
+            android:gravity="center"
+            />
+
+    </RelativeLayout>
+
+</LinearLayout>
+</RelativeLayout>

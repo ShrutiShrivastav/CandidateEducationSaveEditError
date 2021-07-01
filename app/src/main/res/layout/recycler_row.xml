@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="34dp"
+                    android:layout_marginStart="29dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/nunito"
+                    android:text="Position Title *"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                   android:layout_width="21.03dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/edit"
+                    android:layout_marginStart="160dp"
+                    android:src="@drawable/ic_edit" />
+
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="62dp"
+                android:ems="10"
+                android:id="@+id/row_title"
+                android:inputType="textPersonName"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="29dp"
+                android:layout_marginEnd="29dp"
+                android:textStyle="bold"
+                android:gravity="center_vertical"
+                android:background="@drawable/background"
+                android:paddingLeft="29dp"
+                android:textSize="17dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="21dp"
+                android:layout_marginStart="29dp"
+                android:text="Company Name *"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nunito"
+                android:textStyle="bold"
+                android:textSize="18dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="62dp"
+                android:ems="10"
+                android:id="@+id/row_compName"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="29dp"
+                android:layout_marginEnd="29dp"
+                android:textStyle="bold"
+                android:gravity="center_vertical"
+                android:background="@drawable/background"
+                android:paddingLeft="29dp"
+                android:textSize="17dp"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp">
+
+                <TextView
+                    android:id="@+id/textView67"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="29dp"
+                    android:layout_marginTop="21dp"
+                    android:text="Date from *"
+                    android:textStyle="bold"
+                    android:textSize="18dp"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nunito"/>
+
+                <TextView
+                    android:id="@+id/row_dateFrom"
+                    android:layout_width="148dp"
+                    android:layout_height="48dp"
+                    android:layout_below="@+id/textView66"
+                    android:layout_marginStart="34dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:paddingEnd="10dp"
+                    android:paddingStart="20dp"
+                    android:ems="10"
+                    android:background="@drawable/background"
+                    />
+
+                <TextView
+                    android:id="@+id/textView66"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="21dp"
+                    android:layout_marginStart="57dp"
+                    android:layout_marginEnd="107dp"
+                    android:fontFamily="@font/nunito"
+                    android:text="Date To *"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:textSize="18dp" />
+
+                <TextView
+                    android:id="@+id/row_dateTo"
+                    android:layout_width="148dp"
+                    android:layout_height="48dp"
+                    android:layout_below="@+id/textView66"
+                    android:layout_marginStart="26dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="28dp"
+                    android:layout_toEndOf="@+id/row_dateFrom"
+                    android:background="@drawable/background"
+                    android:ems="10"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/nunito"
+                    android:gravity="center"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="10dp" />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>
+    </LinearLayout>
+
