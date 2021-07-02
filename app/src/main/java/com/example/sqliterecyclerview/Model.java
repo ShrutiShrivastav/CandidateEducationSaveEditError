@@ -1,12 +1,21 @@
 package com.example.sqliterecyclerview;
 
-public class model {
+public class Model {
 
     String  title, name, dateFrom,dateTo;
+    String id;
 
-    public model( String title, String name, String dateFrom, String dateTo)
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public Model(String id, String title, String name, String dateFrom, String dateTo)
     {
-
+        this.id=id;
       this.title=title;
       this.name=name;
       this.dateFrom=dateFrom;
