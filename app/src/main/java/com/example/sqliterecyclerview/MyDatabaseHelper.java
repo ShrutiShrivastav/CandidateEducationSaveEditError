@@ -65,6 +65,7 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         cv.put("Name", Name);
         cv.put("dateFrom", dateFrom);
         cv.put("dateTo", dateTo);
+        //New Part
         Cursor cursor=db.rawQuery("select * from my_Example where ID = ?",new String[]{id});
         if(cursor.getCount()>0){
             Log.e("Found: ","values");
