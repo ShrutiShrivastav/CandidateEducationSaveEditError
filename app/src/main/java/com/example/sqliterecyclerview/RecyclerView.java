@@ -1,23 +1,28 @@
 package com.example.sqliterecyclerview;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Adapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class RecyclerView extends AppCompatActivity {
+public class RecyclerView extends AppCompatActivity  implements  clickInterface{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,16 +35,14 @@ public class RecyclerView extends AppCompatActivity {
         TextView noData = findViewById(R.id.noData);
 
         //to avoid NPE
-        ArrayList<Model> dataholder = new ArrayList<>();
+        ArrayList<model> dataholder = new ArrayList<>();
 
 
         androidx.recyclerview.widget.RecyclerView recyclerView = findViewById(R.id.recycler_list);
        recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
-        MyAdapter adapter = new MyAdapter(dataholder, this,RecyclerView.this);
+        MyAdapter adapter = new MyAdapter(dataholder,this, this,RecyclerView.this);
        recyclerView.setAdapter(adapter);
-       //for updating data in model class as well
-        adapter.notifyDataSetChanged();
 
         Cursor cursor = new MyDatabaseHelper( this).readData();
         if(cursor.getCount() == 0)
@@ -51,8 +54,7 @@ public class RecyclerView extends AppCompatActivity {
             while(cursor.moveToNext())
         {
             // creating instance of model type
-            Model object = new Model(cursor.getString(0),cursor.getString(1),cursor.getString(2),cursor.getString(3), cursor.getString(4));
-            Log.e("Class values",": "+object);
+            model object = new model(cursor.getString(1),cursor.getString(2),cursor.getString(3), cursor.getString(4));
             dataholder.add(object);
         }
         emptyImage.setVisibility(View.INVISIBLE);
@@ -63,9 +65,8 @@ public class RecyclerView extends AppCompatActivity {
         backArrowHistory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-              //  Intent intent = new Intent (getApplicationContext(), CandidateEducation.class);
-              //  startActivity(intent);
-                finish();
+                Intent intent = new Intent (getApplicationContext(), CandidateEducation.class);
+                startActivity(intent);
             }
         });
 
