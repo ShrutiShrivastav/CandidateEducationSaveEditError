@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -56,21 +57,51 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         return cursor;
     }
 
+    //for fetching top two updated data
+    public Cursor readTop1() {
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "select * from (select * from my_Example  ORDER BY ID desc) order by ID";
+        Cursor cursor = db.rawQuery(query,null);
+        return cursor;
+    }
+
+    //for fetching top two updated data
+    public Cursor readTop2() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query ="SELECT * FROM my_Example WHERE ID = ( SELECT MAX(ID) FROM my_Example WHERE ID < ( SELECT MAX(ID) FROM my_Example) );";
+        //  String query ="SELECT *  FROM my_Example WHERE dateFrom < ( SELECT MAX(dateFrom) FROM my_Example ORDER BY dateFrom DESC) ";
+
+        Cursor cursor = db.rawQuery(query,null);
+        return cursor;
+    }
+
     //for updating the data
-    void updateData(String Title, String Name, String dateFrom, String dateTo){
+    void updateData(String Title, String Name, String dateFrom, String dateTo,String id){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
         cv.put("Title", Title);
         cv.put("Name", Name);
         cv.put("dateFrom", dateFrom);
         cv.put("dateTo", dateTo);
-
-        long result = db.update("my_Example", cv, "Title=?", new String[]{Title});
-        if(result == -1){
-            Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show();
-        }else {
-            Toast.makeText(context, "Updated Successfully!", Toast.LENGTH_SHORT).show();
+        //New Part
+        Cursor cursor=db.rawQuery("select * from my_Example where ID = ?",new String[]{id});
+        if(cursor.getCount()>0){
+            Log.e("Found: ","values");
+            long result = db.update("my_Example", cv, "ID = ?",new String[]{id});
+            if(result == -1){
+                Log.e("error","1"+ result);
+                Toast.makeText(context, "Failed", Toast.LENGTH_SHORT).show();
+            }else {
+                Log.e("Updated","0 "+ cv);
+                Toast.makeText(context, "Updated Successfully!", Toast.LENGTH_SHORT).show();
+            }
         }
+        else{
+            Log.e("NotFound: ","values");
+        }
+
+        db.close();
 
     }
 
