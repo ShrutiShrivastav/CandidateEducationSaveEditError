@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="10dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="34dp"
+                    android:layout_marginStart="29dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/nunito"
+                    android:text="Skill"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="21.03dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/edu_edit"
+                    android:layout_marginStart="255dp"
+                    android:src="@drawable/ic_edit" />
+
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="62dp"
+                android:ems="10"
+                android:id="@+id/row_skill"
+                android:drawableEnd="@drawable/ic_baseline_arrow_drop_down_24"
+                android:inputType="textPersonName"
+                android:paddingEnd="15dp"
+                android:drawableTint="@color/text_blue"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="29dp"
+                android:layout_marginEnd="29dp"
+                android:textStyle="bold"
+                android:gravity="center_vertical"
+                android:background="@drawable/background"
+                android:paddingLeft="29dp"
+                android:textSize="17dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="21dp"
+                android:layout_marginStart="29dp"
+                android:text="Field of Study/Topic"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nunito"
+                android:textStyle="bold"
+                android:textSize="18dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="62dp"
+                android:ems="10"
+                android:id="@+id/row_study"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="29dp"
+                android:layout_marginEnd="29dp"
+                android:textStyle="bold"
+                android:gravity="center_vertical"
+                android:background="@drawable/background"
+                android:paddingLeft="29dp"
+                android:textSize="17dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="21dp"
+                android:layout_marginStart="29dp"
+                android:text="Institution Name"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nunito"
+                android:textStyle="bold"
+                android:textSize="18dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="62dp"
+                android:ems="10"
+                android:id="@+id/row_instName"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="29dp"
+                android:layout_marginEnd="29dp"
+                android:textStyle="bold"
+                android:gravity="center_vertical"
+                android:background="@drawable/background"
+                android:paddingLeft="29dp"
+                android:textSize="17dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="21dp"
+                android:layout_marginStart="29dp"
+                android:text="Date Completed"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nunito"
+                android:textStyle="bold"
+                android:textSize="18dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="62dp"
+                android:ems="10"
+                android:id="@+id/row_date"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="29dp"
+                android:layout_marginEnd="29dp"
+                android:layout_marginBottom="20dp"
+                android:textStyle="bold"
+                android:gravity="center_vertical"
+                android:background="@drawable/background"
+                android:paddingLeft="29dp"
+                android:textSize="17dp"/>
+
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

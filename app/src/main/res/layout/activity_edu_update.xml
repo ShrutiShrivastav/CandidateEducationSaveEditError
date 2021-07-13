@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".EduUpdateActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/back_arrow_edu"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/ic_arrow_back"
+            app:tint="@color/black" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginEnd="28dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/nunito"
+            android:text="Update Education History"
+            android:textSize="24sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:layout_marginStart="29dp"
+                android:text="Skill"
+                android:textColor="@color/black"
+                android:fontFamily="@font/nunito"
+                android:textStyle="bold"
+                android:textSize="18dp"/>
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:id="@+id/delete"
+                android:layout_marginTop="35dp"
+                android:layout_marginStart="280dp"
+                android:src="@drawable/ic_delete"
+                app:tint="@color/red" />
+
+
+        </LinearLayout>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:ems="10"
+            android:id="@+id/new_skill"
+            android:drawableEnd="@drawable/ic_baseline_arrow_drop_down_24"
+            android:inputType="textPersonName"
+            android:paddingEnd="15dp"
+            android:drawableTint="@color/text_blue"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="29dp"
+            android:layout_marginEnd="29dp"
+            android:textStyle="bold"
+            android:gravity="center_vertical"
+            android:background="@drawable/background"
+            android:paddingLeft="29dp"
+            android:textSize="17dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="21dp"
+            android:layout_marginStart="29dp"
+            android:text="Field of Study/Topic"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito"
+            android:textStyle="bold"
+            android:textSize="18dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:ems="10"
+            android:id="@+id/new_study"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="29dp"
+            android:layout_marginEnd="29dp"
+            android:textStyle="bold"
+            android:gravity="center_vertical"
+            android:background="@drawable/background"
+            android:paddingLeft="29dp"
+            android:textSize="17dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="21dp"
+            android:layout_marginStart="29dp"
+            android:text="Institution Name"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito"
+            android:textStyle="bold"
+            android:textSize="18dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:ems="10"
+            android:id="@+id/new_instName"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="29dp"
+            android:layout_marginEnd="29dp"
+            android:textStyle="bold"
+            android:gravity="center_vertical"
+            android:background="@drawable/background"
+            android:paddingLeft="29dp"
+            android:textSize="17dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="21dp"
+            android:layout_marginStart="29dp"
+            android:text="Date Completed"
+            android:textColor="@color/black"
+            android:fontFamily="@font/nunito"
+            android:textStyle="bold"
+            android:textSize="18dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:ems="10"
+            android:id="@+id/new_dateEnd"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="29dp"
+            android:layout_marginEnd="29dp"
+            android:textStyle="bold"
+            android:gravity="center_vertical"
+            android:background="@drawable/background"
+            android:paddingLeft="29dp"
+            android:textSize="17dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/edu_update"
+            android:layout_width="170dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="120dp"
+            android:text="Update"
+            android:textStyle="bold"
+            android:textSize="19sp"
+            android:fontFamily="@font/nunito"
+            android:textColor="@color/white"
+            android:background="@drawable/background_solid"
+            android:textAllCaps="false"
+            android:gravity="center"
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>
