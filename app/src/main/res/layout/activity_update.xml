@@ -51,7 +51,7 @@
         <ImageView
             android:layout_width="22dp"
             android:layout_height="22dp"
-            android:id="@+id/delete"
+            android:id="@+id/edu_delete"
             android:layout_marginTop="35dp"
             android:layout_marginStart="180dp"
             android:src="@drawable/ic_delete"

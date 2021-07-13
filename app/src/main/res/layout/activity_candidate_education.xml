@@ -55,42 +55,37 @@
         android:layout_marginTop="11dp"
         android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/show_history"
+        <TextView
+            android:id="@+id/tv_showHistory1"
             android:layout_width="match_parent"
-            android:layout_height="64dp"
+            android:layout_height="98dp"
             android:layout_marginStart="29dp"
             android:layout_marginTop="7dp"
             android:layout_marginEnd="29dp"
             android:background="@drawable/background_black"
-            android:drawableRight="@drawable/ic_baseline_arrow_forward_ios_24"
-            android:drawablePadding="20dp"
             android:ems="10"
             android:fontFamily="@font/nunito"
             android:gravity="center_vertical"
-            android:hint="Pharmacy Technician"
-            android:inputType="textPersonName"
             android:paddingLeft="20dp"
             android:paddingRight="10dp"
             android:textColorHint="#555555"
-            android:textSize="17dp" />
-        <EditText
+            android:textSize="14dp" />
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="87dp"
+            android:layout_height="98dp"
             android:ems="10"
-            android:inputType="textPersonName"
+           android:id="@+id/tv_showHistory2"
             android:layout_marginTop="20dp"
             android:layout_marginStart="29dp"
             android:layout_marginEnd="29dp"
             android:gravity="center_vertical"
             android:fontFamily="@font/nunito"
             android:textColorHint="#555555"
-            android:drawableRight="@drawable/ic_baseline_arrow_forward_ios_24"
             android:background="@drawable/background_black"
             android:paddingRight="10dp"
             android:paddingLeft="20dp"
             android:drawablePadding="20dp"
-            android:textSize="17dp"/>
+            android:textSize="14sp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -330,41 +325,241 @@
             android:textColor="#BDBDBD"
             android:text="Please provide information on your formal education as well as any skills you have developed."
             android:textSize="14dp" />
-        <EditText
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="64dp"
+            android:layout_height="120dp"
             android:ems="10"
+            android:id="@+id/tv_showHistory3"
             android:inputType="textPersonName"
+
             android:layout_marginTop="20dp"
             android:layout_marginStart="29dp"
             android:layout_marginEnd="29dp"
             android:gravity="center_vertical"
             android:fontFamily="@font/nunito"
-            android:hint="MIT"
-            android:textColorHint="#555555"
-            android:drawableRight="@drawable/ic_baseline_arrow_forward_ios_24"
+            android:textColor="#555555"
             android:background="@drawable/background_black"
             android:paddingRight="10dp"
             android:paddingLeft="20dp"
             android:drawablePadding="20dp"
-            android:textSize="17dp"/>
-        <androidx.appcompat.widget.AppCompatButton
+            android:textSize="14dp"/>
 
-            android:layout_width="196dp"
-            android:layout_height="45dp"
-            android:layout_marginTop="21dp"
-            android:layout_marginStart="29dp"
-            android:text="Add Education"
-            android:textSize="14dp"
-            android:drawableLeft="@drawable/ic_baseline_add_circle"
-            android:fontFamily="@font/nunito"
-            android:drawablePadding="12dp"
-            android:paddingLeft="30dp"
-            android:textColor="@color/white"
-            android:background="@drawable/background_solid"
-            android:textAllCaps="false"
-            android:gravity="center_vertical"
-            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/edu_visibility_layout_button"
+                android:layout_width="175dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginStart="29dp"
+                android:text="Add Education History"
+                android:textSize="14dp"
+                android:drawableLeft="@drawable/ic_baseline_add_circle"
+                android:fontFamily="@font/nunito"
+                android:drawablePadding="12dp"
+                android:paddingLeft="10dp"
+                android:textColor="@color/white"
+                android:background="@drawable/background_solid"
+                android:textAllCaps="false"
+                android:gravity="center_vertical"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/edu_recycler_button"
+                android:layout_width="165dp"
+                android:layout_height="55dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="29dp"
+                android:layout_marginStart="12dp"
+                android:text="See Education History"
+                android:textSize="14dp"
+                android:fontFamily="@font/nunito"
+                android:drawablePadding="12dp"
+                android:paddingLeft="25dp"
+                android:textColor="@color/white"
+                android:background="@drawable/background_solid"
+                android:textAllCaps="false"
+                android:gravity="center_vertical"
+                />
+
+        </LinearLayout>
+
+
+
+        <!--
+            VISIBILITY ADD EDUCATION HISTORY UI
+        -->
+
+        <RelativeLayout
+            android:id="@+id/Edu_Visibility_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="21dp"
+                    android:layout_marginStart="29dp"
+                    android:text="Skill"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nunito"
+                    android:textStyle="bold"
+                    android:textSize="18dp"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="62dp"
+                    android:ems="10"
+                    android:id="@+id/et_skill"
+                    android:inputType="textPersonName"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="29dp"
+                    android:layout_marginEnd="29dp"
+                    android:textStyle="bold"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/background"
+                    android:paddingLeft="29dp"
+                    android:textSize="17dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="21dp"
+                    android:layout_marginStart="29dp"
+                    android:text="Field of Study/Topic"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nunito"
+                    android:textStyle="bold"
+                    android:textSize="18dp"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="62dp"
+                    android:ems="10"
+                    android:id="@+id/et_study"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="29dp"
+                    android:layout_marginEnd="29dp"
+                    android:textStyle="bold"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/background"
+                    android:paddingLeft="29dp"
+                    android:textSize="17dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="21dp"
+                    android:layout_marginStart="29dp"
+                    android:text="Institution Name"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nunito"
+                    android:textStyle="bold"
+                    android:textSize="18dp"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="62dp"
+                    android:ems="10"
+                    android:id="@+id/et_instName"
+                    android:inputType="textPersonName"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="29dp"
+                    android:layout_marginEnd="29dp"
+                    android:textStyle="bold"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/background"
+                    android:paddingLeft="29dp"
+                    android:textSize="17dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="21dp"
+                    android:layout_marginStart="29dp"
+                    android:text="Date Completion"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nunito"
+                    android:textStyle="bold"
+                    android:textSize="18dp"/>
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="62dp"
+                    android:ems="10"
+                    android:id="@+id/et_DateEnd"
+                    android:inputType="textPersonName"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="29dp"
+                    android:layout_marginEnd="29dp"
+                    android:textStyle="bold"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/background"
+                    android:paddingLeft="29dp"
+                    android:textSize="17dp"/>
+
+
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:layout_width="154dp"
+                        android:layout_height="48dp"
+                        android:ems="10"
+                        android:id="@+id/edu_save"
+                        android:layout_marginTop="21dp"
+                        android:layout_marginStart="29dp"
+                        android:fontFamily="@font/nunito"
+                        android:textStyle="bold"
+                        android:textColor="#fff"
+                        android:gravity="center"
+                        android:text="Save"
+                        android:textAllCaps="false"
+                        android:background="@drawable/background_solid"
+                        android:textSize="20sp"/>
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:layout_width="154dp"
+                        android:layout_height="48dp"
+                        android:ems="10"
+                        android:id="@+id/edu_cancel"
+                        android:layout_marginTop="21dp"
+                        android:layout_marginStart="20dp"
+                        android:fontFamily="@font/nunito"
+                        android:textStyle="bold"
+                        android:textColor="#fff"
+                        android:gravity="center"
+                        android:textAllCaps="false"
+                        android:text="Cancel"
+                        android:background="@drawable/background_solid"
+                        android:textSize="20sp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+
+
+
+
+
         <androidx.appcompat.widget.AppCompatButton
             android:layout_width="match_parent"
             android:layout_height="48dp"

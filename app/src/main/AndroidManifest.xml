@@ -8,11 +8,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SQLiteRecyclerView">
+        <activity android:name=".EduUpdateActivity" android:exported="true"/>
 
-        <activity android:name=".UpdateActivity" android:exported="true"/>
         <activity
-            android:name=".RecyclerView" android:exported="true"
+            android:name=".UpdateActivity"
+            android:exported="true" />
+        <activity
+            android:name=".RecyclerView"
+            android:exported="true"
             android:parentActivityName=".CandidateEducation" />
+
+        <activity android:name=".EduRecyclerView" android:exported="true" android:parentActivityName=".CandidateEducation"/>
         <activity android:name=".CandidateEducation">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

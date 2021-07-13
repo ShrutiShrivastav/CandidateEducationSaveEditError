@@ -20,7 +20,7 @@ public class UpdateActivity extends AppCompatActivity {
 ImageView back_update;
 Button btn_update;
 
-String title,name,dateFrom,dateTo;
+String id, Title,Name,dateFrom,dateTo;
 
 @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,8 +40,9 @@ String title,name,dateFrom,dateTo;
         back_update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent (getApplicationContext(), RecyclerView.class);
-                startActivity(intent);
+              //  Intent intent = new Intent (getApplicationContext(), RecyclerView.class);
+              //  startActivity(intent);
+                finish();
             }
         });
 
@@ -53,11 +54,12 @@ String title,name,dateFrom,dateTo;
             @Override
             public void onClick(View v) {
                 MyDatabaseHelper myDB = new MyDatabaseHelper(UpdateActivity.this);
-                title = new_Title.getText().toString().trim();
-               name = new_Name.getText().toString().trim();
+                Title = new_Title.getText().toString().trim();
+               Name = new_Name.getText().toString().trim();
                dateFrom = new_dateFrom.getText().toString().trim();
               dateTo =  new_dateTo.getText().toString().trim();
-              myDB.updateData(title,name,dateFrom,dateTo);
+              myDB.updateData(Title,Name,dateFrom,dateTo,id);
+
             }
         });
 
@@ -72,22 +74,23 @@ String title,name,dateFrom,dateTo;
     }
   //method for getting and setting intent data
     void getAndSetIntentData(){
-        if(getIntent().hasExtra("title") && getIntent().hasExtra("name") &&
+        if(getIntent().hasExtra("Title") && getIntent().hasExtra("Name") &&
                 getIntent().hasExtra("dateFrom") && getIntent().hasExtra("dateTo")){
             //Getting Data from Intent
 
-            title = getIntent().getStringExtra("title");
-            name = getIntent().getStringExtra("name");
+            Title = getIntent().getStringExtra("Title");
+            Name = getIntent().getStringExtra("Name");
             dateFrom = getIntent().getStringExtra("dateFrom");
             dateTo = getIntent().getStringExtra("dateTo");
+            id=getIntent().getStringExtra("_id");
 
             //Setting Intent Data
-            new_Title.setText(title);
-            new_Name.setText(name);
+            new_Title.setText(Title);
+            new_Name.setText(Name);
             new_dateFrom.setText(dateFrom);
             new_dateTo.setText(dateTo);
 
-            Log.d("", title+" "+name+" "+dateFrom+""+dateTo);
+            Log.d("", Title+" "+Name+" "+dateFrom+""+dateTo);
         }else{
             Toast.makeText(this, "No data.", Toast.LENGTH_SHORT).show();
         }
@@ -97,13 +100,13 @@ String title,name,dateFrom,dateTo;
     void confirmDialog(){
 
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Delete " + title + " ?");
-        builder.setMessage("Are you sure you want to delete " + title + " ?");
+        builder.setTitle("Delete " + Title + " ?");
+        builder.setMessage("Are you sure you want to delete " + Title + " ?");
         builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 MyDatabaseHelper myDB = new MyDatabaseHelper(UpdateActivity.this);
-                myDB.deleteData(title);
+                myDB.deleteData(Title);
                 finish();
             }
         });
